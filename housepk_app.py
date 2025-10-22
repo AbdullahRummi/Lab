@@ -73,7 +73,8 @@ def predict():
         pred_fmt = round(float(pred), 2)
     except:
         pred_fmt = str(pred)
-    return render_template("result.html", prediction=pred_fmt)
+    return render_template("result.html", prediction=f"🏡 Estimated House Price: ${pred_fmt:,.2f}")
+
 
 # Optional JSON API
 @app.route("/api/predict", methods=["POST"])
