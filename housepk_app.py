@@ -73,7 +73,13 @@ def predict():
         pred_fmt = round(float(pred), 2)
     except:
         pred_fmt = str(pred)
-    return render_template("result.html", prediction=pred_fmt)
+        print(f"[INFO] Received input: {row}")
+        print(f"[INFO] Raw prediction: {pred}")
+    print(f"[INFO] Received input: {row}")
+    print(f"[INFO] Raw prediction: {pred}")
+
+    return render_template("result.html", prediction=f"Predicted Price: {round(pred_fmt, 1)} USD")
+
 
 # Optional JSON API
 @app.route("/api/predict", methods=["POST"])
